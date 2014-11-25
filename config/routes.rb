@@ -1,4 +1,5 @@
 Introapp::Application.routes.draw do
+  devise_for :users
   resources :intros
   get :send_email, to: 'intros#send_email', as: :send_email
 

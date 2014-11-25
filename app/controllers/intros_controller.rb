@@ -25,6 +25,7 @@ class IntrosController < ApplicationController
   # POST /intros.json
   def create
     @intro = Intro.new(intro_params)
+    @intro.user = current_user
 
     respond_to do |format|
       if @intro.save
@@ -63,7 +64,8 @@ class IntrosController < ApplicationController
   
   def send_email
       @intro = Intro.find(params[:id])
-      IntroMailer.intro_email(@intro).deliver 
+      IntroMailer.intro_email(@intro).deliver
+       
       redirect_to root_path, notice: 'Email sent.'   
   end
 

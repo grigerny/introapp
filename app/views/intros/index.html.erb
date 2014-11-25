@@ -10,6 +10,7 @@
   </thead>
 
   <tbody>
+	<% if user_signed_in? %>
     <% current_user.intros.each do |intro| %>
       <tr>
 		<td><%= intro.person1_name %> & <%= intro.person2_name%></td>
@@ -18,6 +19,7 @@
         <td><%= link_to 'Destroy', intro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+	<% end %>
   </tbody>
 </table>
 

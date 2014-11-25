@@ -11,6 +11,7 @@
 	Gary</p>
 
 <br>
+<%= link_to "Send Email", :controller => "intros", :action => "send_email", :id => @intro.id %>
 
 <%= link_to 'Edit', edit_intro_path(@intro) %> |
 <%= link_to 'Back', intros_path %> |

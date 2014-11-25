@@ -60,6 +60,12 @@ class IntrosController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def send_email
+      @intro = Intro.find(params[:id])
+      IntroMailer.intro_email(@intro).deliver 
+      redirect_to root_path, notice: 'Email sent.'   
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,4 +77,6 @@ class IntrosController < ApplicationController
     def intro_params
       params[:intro]
     end
+    
+
 end

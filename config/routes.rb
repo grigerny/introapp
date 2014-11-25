@@ -1,5 +1,6 @@
 Introapp::Application.routes.draw do
   resources :intros
+  get :send_email, to: 'intros#send_email', as: :send_email
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

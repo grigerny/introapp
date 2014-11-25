@@ -1,4 +1,4 @@
-<h1>Make a new introduction</h1>
+<h1>Introductions</h1>
 
 <table>
   <thead>
@@ -10,7 +10,7 @@
   </thead>
 
   <tbody>
-    <% @intros.each do |intro| %>
+    <% current_user.intros.each do |intro| %>
       <tr>
 		<td><%= intro.person1_name %> & <%= intro.person2_name%></td>
         <td><%= link_to 'Show', intro %></td>

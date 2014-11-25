@@ -12,6 +12,7 @@
   <tbody>
     <% @intros.each do |intro| %>
       <tr>
+		<td><%= intro.person1_name %> & <%= intro.person2_name%></td>
         <td><%= link_to 'Show', intro %></td>
         <td><%= link_to 'Edit', edit_intro_path(intro) %></td>
         <td><%= link_to 'Destroy', intro, method: :delete, data: { confirm: 'Are you sure?' } %></td>

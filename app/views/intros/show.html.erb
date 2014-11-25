@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<b>To:</b> <%= @intro.person1_email %>, <%= @intro.person2_email%><br><br>
+
+<b>Subject:</b> <%= @intro.person1_name %>, meet <%= @intro.person2_name %><br><br>
+
+<b>Message:</b> <br>
+<p>I think you both share many synergies and should definitely meet one another.<br><br><br>
+	
+	Best, <br>
+	Gary</p>
+
+<br>
+
 <%= link_to 'Edit', edit_intro_path(@intro) %> |
-<%= link_to 'Back', intros_path %>
+<%= link_to 'Back', intros_path %> |
+<%= link_to 'New', new_intro_path %>

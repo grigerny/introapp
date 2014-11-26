@@ -11,6 +11,8 @@ class IntrosController < ApplicationController
   # GET /intros/1
   # GET /intros/1.json
   def show
+    @intro = Intro.find(params[:id])
+    @user = @intro.user
   end
 
   # GET /intros/new

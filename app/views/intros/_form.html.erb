@@ -11,31 +11,41 @@
       </ul>
     </div>
   <% end %>
-<div class="span6">hello</div>
 
-<div class="span6">goodby</div>
+<center><h2>Step 1: Who do you want to introduce?<h3></center>
 
 <div class="row-fluid">
-		<div class="span6">
-			Person 1<br>
+		<div class="span3 offset2">
+			<h3>Person 1</h3>
+			<div class="person1">
 			Name:
 			<%= f.text_field :person1_name %><br>
 			Email: 
 			<%= f.text_field :person1_email %>
+			</div>
 		</div>
-			<div class="span6">	
-				Person 2<br>
+
+
+			<div class="span3 offset2">	
+				<h3>Person 2</h3>
+				<div class="person2">
 				Name:
 				<%= f.text_field :person2_name %><br>
 				Email:
 				<%= f.text_field :person2_email%>
+				</div>
 			</div>	
+</div>			
+<br><br>
+<center><h2>Step 2: Select what you want your email to say<h3></center>
+	
+<div class="row-fluid">	
+<div class="span12">		
+<%= f.select :email_subject,  options_for_select(["You both share powerful synergies and should meet one another to explore potential business opportunities. Good luck!", "I wanted to virtually introduce the two of you because I think it would be very beneficial for you to meet.", "You both have a lot in common and so I wanted to send an email intro."]), {}, { :class => 'selectpicker', multiple: true } %>
+</div>
 </div>
 
 
-
-
-<%= f.select :email_subject, options_for_select([["Select One", ""], "You both share powerful synergies and should meet one another to explore potential business opportunities. Good luck!", "I wanted to virtually introduce the two of you because I think it would be very beneficial for you to meet.", "You both have a lot in common and so I wanted to send an email intro."]), :class => 'genForm_dropBox' %>
 
 
 <br><br>

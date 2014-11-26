@@ -1,3 +1,4 @@
+<div class="row-fluid">
 <%= form_for(@intro) do |f| %>
   <% if @intro.errors.any? %>
     <div id="error_explanation">
@@ -10,21 +11,29 @@
       </ul>
     </div>
   <% end %>
+<div class="span6">hello</div>
 
-Person 1<br>
-<div>
-Name:
-<%= f.text_field :person1_name %>
-Email: 
-<%= f.text_field :person1_email %><br>
-</div><br><br><br>
-<div>
-Person 2<br>
-Name:
-<%= f.text_field :person2_name %>
-Email:
-<%= f.text_field :person2_email%>
+<div class="span6">goodby</div>
+
+<div class="row-fluid">
+		<div class="span6">
+			Person 1<br>
+			Name:
+			<%= f.text_field :person1_name %><br>
+			Email: 
+			<%= f.text_field :person1_email %>
+		</div>
+			<div class="span6">	
+				Person 2<br>
+				Name:
+				<%= f.text_field :person2_name %><br>
+				Email:
+				<%= f.text_field :person2_email%>
+			</div>	
 </div>
+
+
+
 
 <%= f.select :email_subject, options_for_select([["Select One", ""], "You both share powerful synergies and should meet one another to explore potential business opportunities. Good luck!", "I wanted to virtually introduce the two of you because I think it would be very beneficial for you to meet.", "You both have a lot in common and so I wanted to send an email intro."]), :class => 'genForm_dropBox' %>
 
@@ -34,3 +43,4 @@ Email:
     <%= f.submit %>
   </div>
 <% end %>
+</div>

@@ -95,7 +95,7 @@
 
 .top-bar{
 	background-color:#404040;
-	height:40px;
+	height:60px;
 }
 .to-email{
 	margin-top:20px;
@@ -112,4 +112,21 @@
 	margin-top:20px;
 	margin-left:20px;
 	color:black;
+}
+
+.fa-paper-plane-o{
+	margin-right:40px;
+	padding:10px;
+	float:right;
+	font-size:36px;
+}
+
+.fa-paper-plane-o:hover{
+	font-size:36px;
+}
+
+.fa-arrow-left{
+	margin-right:40px;
+	padding:10px;
+	font-size:36px;
 }

@@ -5,10 +5,14 @@
 <b>Subject:</b> <%= @intro.person1_name %>, meet <%= @intro.person2_name %><br><br>
 
 <b>Message:</b> <br>
-<p>I think you both share many synergies and should definitely meet one another.<br><br><br>
+<br>
+Hi <%= @intro.person1_name %> & <%= @intro.person2_name %>,
+
+<p><%= @intro.email_subject %><br><br><br>
 	
 	Best, <br>
 	Gary</p>
+	
 
 <br>
 <%= link_to "Send Email", :controller => "intros", :action => "send_email", :id => @intro.id %>

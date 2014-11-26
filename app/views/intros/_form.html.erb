@@ -25,6 +25,10 @@ Name:
 Email:
 <%= f.text_field :person2_email%>
 </div>
+
+<%= f.select :email_subject, options_for_select([["Select One", ""], "You both share powerful synergies and should meet one another to explore potential business opportunities. Good luck!", "I wanted to virtually introduce the two of you because I think it would be very beneficial for you to meet.", "You both have a lot in common and so I wanted to send an email intro."]), :class => 'genForm_dropBox' %>
+
+
 <br><br>
   <div class="actions">
     <%= f.submit %>

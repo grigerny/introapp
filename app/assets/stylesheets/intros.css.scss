@@ -2,26 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .person1{
+	font-family:'FontAwesome';
 	margin-top:20px;
 	padding:20px;
 	float:left;
-	background-color:#F6F6F6;
-	border-radius:5px;
+}
+
+.person1-title{
+	font-family:'FontAwesome';
+	font-size:28px;
+	padding-left:40px;
+	margin-top:12px;
 }
 
 .person2{
+	font-family:'FontAwesome';
 	margin-top:20px;
 	padding:20px;
 	float:left;
-	background-color:#F6F6F6;
-	border-radius:5px;
 	
 }
 
+.person2-title{
+	font-family:'FontAwesome';
+	font-size:28px;
+	padding-left:40px;
+	margin-top:12px;
+}
+
 .selectpicker{
-   padding-top:20px;
+   font-family:'FontAwesome';
+   color:gray !important;
+   padding:40px !important;
    font-size:16px !important;
-   background-color:transparent;
    width:100%;
    border: none !important;
    text-decoration:none !important;
@@ -34,9 +47,47 @@
 }
 
 .best_in_place_message{
+   font-family:'FontAwesome';
    padding:40px !important;
    font-size:16px !important;
    width:80%;
    border: none !important;
    outline:0px !important;
+}
+
+.update-button{
+	color:white;
+	padding:20px;
+	font-size:24px;
+	border: none !important;
+	text-decoration:none !important;
+	outline:0px !important;
+	background-color:#009ECB;
+	font-family:'FontAwesome';
+}
+
+.update-button:hover{
+	color:white;
+	padding:20px;
+	font-size:24px;
+	border: none !important;
+	text-decoration:none !important;
+	outline:0px !important;
+	background-color:#FF00F9;
+	font-family:'FontAwesome';
+}
+
+.input_field{
+	border-radius:0px !important;
+	font-family:'FontAwesome';
+	color:gray !important;
+	font-size:16px !important;
+	width:100%;
+	border-left: none !important;
+	border-right:none !important;
+	border-top:none !important;
+	text-decoration:none !important;
+	outline:none !important;
+	-webkit-appearance: none !important;
+	box-shadow: none !important;
 }

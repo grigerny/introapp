@@ -12,33 +12,34 @@
     </div>
   <% end %>
 
-<center><h2>New Introduction<h3></center><br><br>
+<center><h2>Begin Introduction<h3></center><br><br>
 
 <div class="row-fluid">
 		<div class="span3 offset2">
-			<i class="fa fa-user"> Person 1</i>
-			
+			<i class="fa fa-user"> </i> 
+			<div class="person1-title">Person 1</div>	
 			<div class="person1">
 			Name:
-			<%= f.text_field :person1_name %><br>
+			<%= f.text_field :person1_name, :class=> "input_field" %><br>
 			Email: 
-			<%= f.text_field :person1_email %>
+			<%= f.text_field :person1_email, :class=> "input_field" %>
 			</div>
 		</div>
 
 
 			<div class="span3 offset2">	
-				<i class="fa fa-user"> Person 2</i><br>
+				<i class="fa fa-user"></i>
+				<div class="person2-title">Person 2</div>
 				<div class="person2">
 				Name:
-				<%= f.text_field :person2_name %><br>
+				<%= f.text_field :person2_name, :class=> "input_field" %><br>
 				Email:
-				<%= f.text_field :person2_email%>
+				<%= f.text_field :person2_email, :class=> "input_field"%>
 				</div>
 			</div>	
 </div>			
 <br><br>
-<center><h2>Email Message <h3></center>
+<center><h2>Choose a Message <h3></center>
 	
 <div class="row-fluid">	
 <div class="span8 offset2">		
@@ -46,12 +47,11 @@
 </div>
 </div>
 
-
-
-
 <br><br>
   <div class="actions">
-    <%= f.submit %>
+	<center>
+    <%= f.submit "Preview Email", :class => "update-button" %>
+	</center>
   </div>
 <% end %>
 </div>

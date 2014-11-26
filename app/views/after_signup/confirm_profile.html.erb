@@ -1,0 +1,8 @@
+<%= form_for @user, url: wizard_path do |f| %>
+<br>
+Let's set up your email signature:<br>
+<%= f.text_area :signature %><br>
+
+
+<%= f.submit "Submit" %>
+<% end %>

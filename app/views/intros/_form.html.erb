@@ -12,11 +12,12 @@
     </div>
   <% end %>
 
-<center><h2>Step 1: Who do you want to introduce?<h3></center>
+<center><h2>New Introduction<h3></center><br><br>
 
 <div class="row-fluid">
 		<div class="span3 offset2">
-			<h3>Person 1</h3>
+			<i class="fa fa-user"> Person 1</i>
+			
 			<div class="person1">
 			Name:
 			<%= f.text_field :person1_name %><br>
@@ -27,7 +28,7 @@
 
 
 			<div class="span3 offset2">	
-				<h3>Person 2</h3>
+				<i class="fa fa-user"> Person 2</i><br>
 				<div class="person2">
 				Name:
 				<%= f.text_field :person2_name %><br>
@@ -37,11 +38,11 @@
 			</div>	
 </div>			
 <br><br>
-<center><h2>Step 2: Select what you want your email to say<h3></center>
+<center><h2>Email Message <h3></center>
 	
 <div class="row-fluid">	
-<div class="span12">		
-<%= f.select :email_subject,  options_for_select(["You both share powerful synergies and should meet one another to explore potential business opportunities. Good luck!", "I wanted to virtually introduce the two of you because I think it would be very beneficial for you to meet.", "You both have a lot in common and so I wanted to send an email intro."]), {}, { :class => 'selectpicker', multiple: true } %>
+<div class="span8 offset2">		
+<%= f.select :email_subject,  options_for_select(["You both share powerful synergies and should meet one another to explore potential business opportunities.", "I wanted to virtually introduce the two of you because I think it would be very beneficial for you to meet.", "You both have a lot in common and so I wanted to send an email intro."]), {}, { :class => 'selectpicker' } %>
 </div>
 </div>
 

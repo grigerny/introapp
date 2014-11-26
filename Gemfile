@@ -51,3 +51,4 @@ gem 'wicked'
 gem 'twitter-bootstrap-rails'
 gem "less-rails" 
 gem "therubyracer"
+gem "font-awesome-rails"

@@ -1,19 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<b>To:</b> <%= @intro.person1_email %>, <%= @intro.person2_email%><br><br>
+<div class="row-fluid">
+	<div class="span12">
+		<div class="top-bar">
+			</div>
+			</div>
+			</div>
 
-<b>Subject:</b> <%= @intro.person1_name %>, meet <%= @intro.person2_name %><br><br>
+<div class="row-fluid">
 
-<b>Message:</b> <br>
-<br>
+<div class="to-email">
+<b>To:</b> <%= @intro.person1_email %>, <%= @intro.person2_email%>
+</div>
+</div>
+<hr>
+
+<div class="row-fluid">
+	<div class="subject-email">
+<b>Subject:</b> <%= @intro.person1_name %>, meet <%= @intro.person2_name %>
+	</div>
+</div>
+<hr>
+
+<div class="row-fluid">
+	<div class="message-email">
 Hi <%= @intro.person1_name %> & <%= @intro.person2_name %>,
-	
-<p><%= best_in_place @intro, :email_subject, :type => :input,  :html_attrs => { :class => 'best_in_place_message' } %><br><br><br>
+<br><br><br>
+<%= best_in_place @intro, :email_subject, :type => :textarea, :display_with => :simple_format, :html_attrs => { :class => 'best_in_place_message' } %>
+<br><br><br>	
+<%= simple_format(@user.signature) %>
+	</div>
+</div>
 
-<%= @user.signature %>
-	
-
-<br>
+<hr>
+<br><br><br><br>
 <%= link_to "Send Email", :controller => "intros", :action => "send_email", :id => @intro.id %>
 
 <%= link_to 'Edit', edit_intro_path(@intro) %> |

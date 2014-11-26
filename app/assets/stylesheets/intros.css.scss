@@ -48,9 +48,10 @@
 
 .best_in_place_message{
    font-family:'FontAwesome';
-   padding:40px !important;
+   padding:10px !important;
    font-size:16px !important;
    width:80%;
+   height:100px;
    border: none !important;
    outline:0px !important;
 }
@@ -90,4 +91,25 @@
 	outline:none !important;
 	-webkit-appearance: none !important;
 	box-shadow: none !important;
+}
+
+.top-bar{
+	background-color:#404040;
+	height:40px;
+}
+.to-email{
+	margin-top:20px;
+	margin-left:20px;
+	color:gray;
+}
+
+.subject-email{
+	margin-left:20px;
+	color:gray;
+}
+
+.message-email{
+	margin-top:20px;
+	margin-left:20px;
+	color:black;
 }

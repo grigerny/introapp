@@ -48,3 +48,6 @@ gem 'devise'
 gem 'rails_12factor', group: :production
 gem "best_in_place"
 gem 'wicked'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "less-rails" 
+gem "therubyracer"

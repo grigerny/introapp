@@ -7,11 +7,8 @@
 <b>Message:</b> <br>
 <br>
 Hi <%= @intro.person1_name %> & <%= @intro.person2_name %>,
-
-<p><%= @intro.email_subject %><br><br><br>
 	
-	Best, <br>
-	Gary</p>
+<p><%= best_in_place @intro, :email_subject, :type => :input, :html_attrs => { :style => 'width:800px; height:40px;' } %><br><br><br>
 
 <%= @user.signature %>
 	

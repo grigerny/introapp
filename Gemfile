@@ -46,3 +46,4 @@ end
 gem 'protected_attributes'
 gem 'devise'
 gem 'rails_12factor', group: :production
+gem "best_in_place"

@@ -1,8 +1,11 @@
 <%= form_for @user, url: wizard_path do |f| %>
 <br>
-Let's set up your email signature:<br>
-<%= f.text_area :signature %><br>
+<center><h2>Lets set up your email signature!</h2></center>
+<center><h5>Don't worry you can change it later in your profile</h5></center>
+<center>
+<%= f.text_area :signature, :style=>"width: 500px; height: 300px;", :placeholder =>"John Doe from ABC Company" %><br>
 
 
 <%= f.submit "Submit" %>
+</center>
 <% end %>

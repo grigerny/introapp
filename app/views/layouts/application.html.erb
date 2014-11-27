@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	
 <div class="btn-group closed">
  <%= link_to root_url, :class=> "btn btn-primary" do %>
 <i class="fa fa-home fa-fw"></i>Home
@@ -34,11 +34,17 @@
 	 <%= link_to new_user_session_path do %>
 	<center><li><i class="i"></i>Login</li></center>
 	<% end %>
-	<% end %>
-
-	
+	<% end %>	
   </ul>
 </div>
+<div class="row-fluid">
+	<div class="logo">
+		<center>
+<%= image_tag "yointro-logo.png" %>
+</ceter>
+	</div>
+</div>
+
 <div class="footer navbar-fixed-bottom">A project by <%= link_to '@garyriger', 'http://www.twitter.com/garyriger' %>. Copyright 2014 Thinklab Media. </div>
 
 <%= yield %>

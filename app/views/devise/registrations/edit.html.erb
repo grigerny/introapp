@@ -6,12 +6,12 @@
   <%= devise_error_messages! %>
 
   <div>
-
-	<%= f.text_area :signature, :style=>"width: 500px; height: 300px;"%><br>
 	
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+
+	<%= f.text_area :signature, :style =>"width: 500px; height: 300px;" %> <br>
 
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password, :class=> "input_field" %></div>

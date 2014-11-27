@@ -1,10 +1,10 @@
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
     :enable_starttls_auto => true,
-    :address        => 'smtp.gmail.com',
-    :port           => 587,
-    :domain         => 'gmail.com',
+    :address        => 'gator2013.hostgator.com',
+    :port           => 465,
+    :domain         => 'yointro.com',
     :authentication => :plain,
-    :user_name      => 'gary.riger@gmail.com',
-    :password       => 'Elwin11345'
+    :user_name      => 'intro@yointro',
+    :password       => 'elwin11'
   }

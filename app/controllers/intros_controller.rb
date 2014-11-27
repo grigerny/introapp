@@ -68,8 +68,9 @@ class IntrosController < ApplicationController
   def send_email
       @intro = Intro.find(params[:id])
       IntroMailer.intro_email(@intro).deliver
-       
-      redirect_to root_path, notice: 'Email sent.'   
+      redirect_to root_url 
+      flash[:notice]  = 'Intro was successfully sent.' 
+ 
   end
 
   private

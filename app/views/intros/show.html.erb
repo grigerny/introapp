@@ -6,9 +6,6 @@
 			<%= link_to edit_intro_path(@intro) do %>
 			<i class="fa fa-arrow-left"> Back</i>
 			<% end %>
-			<%= link_to :controller => "intros", :action => "send_email", :id => @intro.id do %>
-			<i class="fa fa-paper-plane-o"> Send</i>
-			<% end %>
 			</div>
 			</div>
 			</div>
@@ -43,8 +40,4 @@ Hi <%= @intro.person1_name %> & <%= @intro.person2_name %>,
 <i class="fa fa-paper-plane-o"> Send</i>
 <% end %>
 
-<br><br><br><br>
 
-<%= link_to 'Edit', edit_intro_path(@intro) %> |
-<%= link_to 'Back', intros_path %> |
-<%= link_to 'New', new_intro_path %>

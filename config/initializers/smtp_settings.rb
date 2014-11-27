@@ -5,6 +5,6 @@ ActionMailer::Base.smtp_settings = {
     :port           => 465,
     :domain         => 'yointro.com',
     :authentication => :plain,
-    :user_name      => 'intro@yointro',
+    :user_name      => 'intro@yointro.com',
     :password       => 'elwin11'
   }

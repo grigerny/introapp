@@ -7,13 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
-<% if user_signed_in? %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path %> |
-  <%= link_to "Login", new_user_session_path %>
-<% end %>
-
 
 <div class="btn-group closed">
  <%= link_to root_url, :class=> "btn btn-primary" do %>
@@ -22,13 +15,28 @@
   <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
     <span class="fa fa-caret-down"></span></a>
   <ul class="dropdown-menu">
+	 <%= link_to intros_path  do %>
+<center><li><i class="fa fa-clock-o"></i> History</li></center>
+	<% end %>
 	 <%= link_to edit_user_registration_path  do %>
-	<li><i class="fa fa-pencil fa-fw"></i>Edit Profile</li>
+	<center><li><i class="fa fa-pencil fa-fw"></i>Edit Profile</li></center>
 	<% end %>
     <li class="divider"></li>
+
+	<% if user_signed_in? %>
 	 <%= link_to destroy_user_session_path, method: :delete do %>
-	<li><i class="i"></i>Logout</li>
+	<center><li><i class="i"></i>Logout</li></center>
 	<% end %>
+	<% else %>
+	<%= link_to new_user_registration_path do  %>
+	<center><li><i class="i"></i>Sign up</li></center>
+	<% end %>
+	 <%= link_to new_user_session_path do %>
+	<center><li><i class="i"></i>Login</li></center>
+	<% end %>
+	<% end %>
+
+	
   </ul>
 </div>
 

@@ -1,28 +1,22 @@
-<h1>Introductions</h1>
-
+<% if user_signed_in? %>
+<center><h2>Introduction History<h3></center><br><br>
+<center>
 <table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
   <tbody>
-	<% if user_signed_in? %>
     <% current_user.intros.each do |intro| %>
       <tr>
-		<td><%= intro.person1_name %> & <%= intro.person2_name%></td>
-        <td><%= link_to 'Show', intro %></td>
-        <td><%= link_to 'Edit', edit_intro_path(intro) %></td>
-        <td><%= link_to 'Destroy', intro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td><div class="person1-title"><%= intro.person1_name %></div></td>
+	<td><div class="person1-title">was introduced to</div></td>
+	<td><div class="person1-title"><%= intro.person2_name %></div></td>
+	<td><div class="person1-title">on</div></td>
+	<td><div class="person1-title"><%= intro.created_at.strftime("%m/%d/%Y %I:%M %p")%></div></td>
       </tr>
     <% end %>
-	<% end %>
   </tbody>
 </table>
+</center>
 
 <br>
-
-<%= link_to 'New Intro', new_intro_path %>
+<% end %>
+<% else %>
+<center><h2>You are not signed in!<h3></center>

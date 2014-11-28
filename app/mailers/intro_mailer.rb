@@ -1,5 +1,5 @@
 class IntroMailer < ActionMailer::Base
-  default from: "intro@yointro.com"
+  default from: "Intro@yointro.com"
   
   def intro_email(intro)
     @intro = intro

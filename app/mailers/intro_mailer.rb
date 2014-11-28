@@ -1,5 +1,5 @@
 class IntroMailer < ActionMailer::Base
-  default from: "Email Introduction"
+  default from: "app31957904@heroku.com"
   
   def intro_email(intro)
     @intro = intro

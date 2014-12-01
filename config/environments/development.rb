@@ -18,12 +18,12 @@ Introapp::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000'}
   config.action_mailer.perform_deliveries = true
   ActionMailer::Base.smtp_settings = {
-    :address        => "smtp.sendgrid.net",
+    :address        => "smtp.gmail.com",
     :port           => "587",
     :authentication => :plain,
-    :domain         => 'heroku.com',
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'gmail.com',
+    :user_name      => 'gary.riger@gmail.com',
+    :password       => 'Elwin11345',
     :enable_starttls_auto => true
   }
   

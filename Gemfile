@@ -52,3 +52,4 @@ gem 'twitter-bootstrap-rails'
 gem "less-rails" 
 gem "therubyracer"
 gem "font-awesome-rails"
+gem "omniauth-google-oauth2"

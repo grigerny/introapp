@@ -1,9 +1,21 @@
 <center><%= image_tag "yointro-logo.png" %></center><br><br>
 
+<div class="container">
+<div class="row-fluid">
+<div class="span8">
 
-<center><h2>Sign in</h2></center>
+<h3>What is Yo'intro</h3>
+A service that allows you to quickly send an email introducing 2 people. 
+<h3>How is it different from writing a regular email?</h3>
+Yo'intro will automatically pre-fill the entire email for you. All you have to do is choose your recipients and hit send!
+<h3>What if I have more questions?</h3>
+We will soon have a complete FAQ section, but until then please email us at <%= mail_to "yointroapp@gmail.com", "yointroapp@gmail.com" %>
+</div>
 
-<center>
+<div class="span4">
+<h2>Sign in</h2>
+
+
 <div class="sign-in">
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div>
@@ -17,4 +29,5 @@
 
 <%= render "devise/shared/links" %>
 </div>
-</center>
+</div>
+</div>

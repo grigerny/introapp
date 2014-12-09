@@ -17,6 +17,7 @@ class IntrosController < ApplicationController
 
   # GET /intros/new
   def new
+    load_contracts
     @intro = Intro.new
   end
 
@@ -67,7 +68,7 @@ class IntrosController < ApplicationController
   
   def send_email
       @intro = Intro.find(params[:id])
-      IntroMailer.intro_email(@intro).deliver
+      IntroMailer.intro_email(@intro, current_user).deliver
       redirect_to root_url 
       flash[:notice]  = 'Intro was successfully sent.' 
  
@@ -84,5 +85,13 @@ class IntrosController < ApplicationController
       params[:intro]
     end
     
+    def load_contracts
+      unless request.env['omnicontacts.contacts'].blank?
+        contacts = request.env['omnicontacts.contacts']
+        @contact_emails = []
+        contacts.each{ |con| @contact_emails << con[:email] }
+        @contact_emails
+      end
+    end
 
 end

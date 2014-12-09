@@ -251,5 +251,6 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  require 'omniauth-google-oauth2'
   config.omniauth :google_oauth2, "330061137178-0bhe1iu4dlmsrvu886iadpjkmkgvqbpd.apps.googleusercontent.com", "OkqpLYVyQ7E1y4dk_VYe3q5t", { }
 end

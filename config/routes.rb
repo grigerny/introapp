@@ -1,4 +1,5 @@
 Introapp::Application.routes.draw do
+  match "/contacts/:importer/callback" => "intros#new", :via => [:get]
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :intros
   get :send_email, to: 'intros#send_email', as: :send_email

@@ -1,7 +1,8 @@
 class IntrosController < ApplicationController
   before_action :set_intro, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:index]
-
+  
+  
   # GET /intros
   # GET /intros.json
   def index
@@ -86,9 +87,9 @@ class IntrosController < ApplicationController
     end
     
     def load_contracts
+      @contact_emails = []
       unless request.env['omnicontacts.contacts'].blank?
         contacts = request.env['omnicontacts.contacts']
-        @contact_emails = []
         contacts.each{ |con| @contact_emails << con[:email] }
         @contact_emails
       end

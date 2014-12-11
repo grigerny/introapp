@@ -23,12 +23,12 @@
 <div class="row-fluid">
 		<div class="span3 offset2">
 			<i class="fa fa-user"> </i> 
-			<div class="person1-title">Person 1</div>
-			<%= link_to "Load contacts from google","/contacts/gmail" %>	
+			<div class="person1-title">Person 1</div><br>
+			<%= link_to "Load Google Contacts","/contacts/gmail" %>	
 			<div class="person1">
 			Name:
 			<%= f.text_field :person1_name, :class=> "input_field" %><br>
-			Email: 
+			Email:    
 			  <%= f.text_field :person1_email, :class=> "input_field" %>
 			</div>
 		</div>

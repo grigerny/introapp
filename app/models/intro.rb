@@ -8,4 +8,5 @@ class Intro < ActiveRecord::Base
   validates_format_of :person1_email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   validates_format_of :person2_email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 
+
 end

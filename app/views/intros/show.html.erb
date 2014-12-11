@@ -25,11 +25,11 @@
 
 <div class="row-fluid">
 	<div class="message-email">
-Hi <%= @intro.person1_name %> & <%= @intro.person2_name %>,
+Hi <%= @intro.person1_name %> and <%= @intro.person2_name %>,
 <br><br><br>
 
 <div class="best-in-place-wrapper">
-<%= best_in_place @intro, :email_subject, :type => :textarea, :display_with => :simple_format, :html_attrs => { :class => 'best_in_place_message' } %>
+<%= best_in_place @intro, :email_subject, :type => :textarea, :display_with => :simple_format, :html_attrs => { :class => 'best_in_place_message' } %> 
 </div>
 
 <script>

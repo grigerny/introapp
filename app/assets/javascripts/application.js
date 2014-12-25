@@ -13,6 +13,7 @@
 //= require jquery
 //= require best_in_place
 //= require jquery_ujs
+//= require jquery-ui
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .

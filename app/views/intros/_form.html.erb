@@ -5,6 +5,11 @@
 </center>
 
 <center><%= image_tag "yointro-logo.png" %></center>
+<br>
+<%= link_to '/contacts/gmail' do %>
+<center><%= image_tag('google_contacts.png')%></center>
+<% end %>
+<center><%= link_to "Load Your Google Contacts","/contacts/gmail" %>	</center>
 <div class="row-fluid">
 <%= form_for(@intro) do |f| %>
   <% if @intro.errors.any? %>
@@ -24,14 +29,18 @@
 		<div class="span3 offset2">
 			<i class="fa fa-user"> </i> 
 			<div class="person1-title">Person 1</div><br>
-			<%= link_to "Load Google Contacts","/contacts/gmail" %>	
 			<div class="person1">
 			Name:
 			<%= f.text_field :person1_name, :class=> "input_field" %><br>
-			Email:    
-			  <%= f.text_field :person1_email, :class=> "input_field" %>
+			Email:
+			  <% if @contact_emails.blank? %>
+			<%= f.text_field :person1_email, :class=> "input_field" %>
+			<% else %>
+			<%= f.text_field :person1_email, :class=> "input_field", :placeholder => "Search Google Contacts..." %>
+			<% end %>
 			</div>
 		</div>
+
 
 
 			<div class="span3 offset2">	
@@ -41,7 +50,11 @@
 				Name:
 				<%= f.text_field :person2_name, :class=> "input_field" %><br>
 				Email:
-				  <%= f.text_field :person2_email, :class=> "input_field" %>
+				  <% if @contact_emails.blank? %>
+				<%= f.text_field :person2_email, :class=> "input_field" %>
+				<% else %>
+				<%= f.text_field :person2_email, :class=> "input_field", :placeholder => "Search Google Contacts..." %>
+				<% end %>
 				</div>
 			</div>	
 </div>
@@ -65,7 +78,7 @@
 
 <script>
   $(function() {
-    var availableTags = <%= raw @contact_emails.to_json %>  
+    var availableTags = <%= raw @contact_emails.reject(&:blank?).to_json %>  
     $( "#intro_person2_email" ).autocomplete({
     source: availableTags
     });

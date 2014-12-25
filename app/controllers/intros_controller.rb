@@ -18,12 +18,13 @@ class IntrosController < ApplicationController
 
   # GET /intros/new
   def new
-    load_contracts
+    load_contacts
     @intro = Intro.new
   end
 
   # GET /intros/1/edit
   def edit
+    load_contacts
   end
 
   # POST /intros
@@ -86,7 +87,7 @@ class IntrosController < ApplicationController
       params[:intro]
     end
     
-    def load_contracts
+    def load_contacts
       @contact_emails = []
       unless request.env['omnicontacts.contacts'].blank?
         contacts = request.env['omnicontacts.contacts']

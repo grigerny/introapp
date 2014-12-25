@@ -53,4 +53,4 @@ gem "less-rails"
 gem "therubyracer"
 gem "font-awesome-rails"
 gem "omniauth-google-oauth2"
-gem "omnicontacts"
+gem 'omnicontacts', github: 'Diego81/omnicontacts'

@@ -19,8 +19,7 @@ class RegistrationsController < Devise::RegistrationsController
     after_signup_path(:confirm_profile)
   end
   
-
-  
+    
   private
 
    def sign_up_params

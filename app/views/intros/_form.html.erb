@@ -76,6 +76,8 @@
 <% end %>
 </div>
 
+<% if @contact_emails.blank? == false %>
+
 <script>
   $(function() {
     var availableTags = <%= raw @contact_emails.reject(&:blank?).to_json %>  
@@ -88,3 +90,5 @@
     });
 });
 </script>
+
+<% end %>

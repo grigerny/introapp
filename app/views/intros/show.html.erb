@@ -18,14 +18,14 @@
 
 <div class="row-fluid">
 	<div class="subject-email">
-<b>Subject:</b> <%= @intro.person1_name %>, meet <%= @intro.person2_name %>
+<b>Subject:</b> Introducing <%= @intro.person1_name.capitalize %> and <%= @intro.person2_name.capitalize %>
 	</div>
 </div>
 <hr>
 
 <div class="row-fluid">
 	<div class="message-email">
-Hi <%= @intro.person1_name %> and <%= @intro.person2_name %>,
+Hi <%= @intro.person1_name.capitalize %> and <%= @intro.person2_name.capitalize %>,
 <br><br><br>
 
 <div class="best-in-place-wrapper">

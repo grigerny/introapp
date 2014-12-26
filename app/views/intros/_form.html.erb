@@ -4,12 +4,22 @@
 <% end %>
 </center>
 
+<div class="resize-for-mobile">
 <center><%= image_tag "yointro-logo.png" %></center>
+</div>
+
+<div class="hide-for-mobile">
 <br>
 <%= link_to '/contacts/gmail' do %>
-<center><%= image_tag('google_contacts.png')%></center>
+<center>
+<%= image_tag('google_contacts.png')%><br>
+<%= "Import Google Contacts" %>
+</center>
 <% end %>
-<center><%= link_to "Load Your Google Contacts","/contacts/gmail" %>	</center>
+<center>
+	
+</div>
+
 <div class="row-fluid">
 <%= form_for(@intro) do |f| %>
   <% if @intro.errors.any? %>
@@ -24,17 +34,17 @@
     </div>
   <% end %>
 
+
 <br><br>
 <div class="row-fluid">
+	
 		<div class="span3 offset2">
-			<i class="fa fa-user"> </i> 
-			<div class="person1-title">Person 1</div><br>
+			 
+			<div class="person1-title"><i class="fa fa-user"> Person 1</i></div><br>
 			<div class="person1">
-			Name:
-			<%= f.text_field :person1_name, :class=> "input_field" %><br>
-			Email:
+			<%= f.text_field :person1_name, :class=> "input_field", :placeholder => "Name:" %>
 			  <% if @contact_emails.blank? %>
-			<%= f.text_field :person1_email, :class=> "input_field" %>
+			<%= f.text_field :person1_email, :class=> "input_field", :placeholder => "Email:" %>
 			<% else %>
 			<%= f.text_field :person1_email, :class=> "input_field", :placeholder => "Search Google Contacts..." %>
 			<% end %>
@@ -44,24 +54,40 @@
 
 
 			<div class="span3 offset2">	
-				<i class="fa fa-user"> </i>
-				<div class="person2-title">Person 2</div>
+
+				<div class="person2-title"><i class="fa fa-user"> Person 2</i></div><br>
 				<div class="person2">
-				Name:
-				<%= f.text_field :person2_name, :class=> "input_field" %><br>
-				Email:
+				<%= f.text_field :person2_name, :class=> "input_field", :placeholder => "Name:"  %><br>
 				  <% if @contact_emails.blank? %>
-				<%= f.text_field :person2_email, :class=> "input_field" %>
+				<%= f.text_field :person2_email, :class=> "input_field", :placeholder => "Email:"  %>
 				<% else %>
 				<%= f.text_field :person2_email, :class=> "input_field", :placeholder => "Search Google Contacts..." %>
 				<% end %>
 				</div>
 			</div>	
+			
 </div>
 			
 <div class="row-fluid">	
-<center><h2>Choose a Message <h2></center>
-<center><h5>Don't worry you can edit this later</h5></center>
+	
+	<div class="row-fluid">
+	<center>
+	<div class="choose-message">
+		Choose a Message
+	</div>
+	</center>
+	</div>
+	
+	<div class="row-fluid">
+	<center>
+	<div class="choose-message-2">
+	(Don't worry, you'll be able to edit this)
+	</div>
+	</center>
+	</div>
+	
+<br>
+	
 <div class="span8 offset2">		
 <%= f.select :email_subject,  options_for_select(["I really think you guys should meet!","I think you should connect and explore synergies.", "I'm excited to connect you, please reach out to one another so you can explore business opportunities."]), {}, { :class => 'selectpicker' } %>
 </div>
@@ -75,6 +101,14 @@
   </div>
 <% end %>
 </div>
+
+<script>
+jQuery(document).ready(function() {
+    jQuery('.gmaillink').trigger('click');
+});
+jQuery(document).on("page:load ready", loaded);
+</script>
+
 
 <% if @contact_emails.blank? == false %>
 

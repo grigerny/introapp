@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	
@@ -45,7 +47,11 @@
 	</div>
 </div>
 
+<div class="hide-for-mobile">
+	
 <div class="footer navbar-fixed-bottom">A project by <%= link_to '@garyriger', 'http://www.twitter.com/garyriger' %>. Inspiration by Adam Solomon. Copyright 2014 Thinklab Media. </div>
+
+</div>
 
 <%= yield %>
 

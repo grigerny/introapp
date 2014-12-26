@@ -54,3 +54,4 @@ gem "therubyracer"
 gem "font-awesome-rails"
 gem "omniauth-google-oauth2"
 gem 'omnicontacts', github: 'Diego81/omnicontacts'
+gem 'omniauth-linkedin-oauth2'

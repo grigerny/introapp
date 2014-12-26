@@ -3,21 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .person1{
 	font-family:'FontAwesome';
-	margin-top:20px;
 	padding:20px;
 	float:left;
 }
 
 .person1-title{
 	font-family:'FontAwesome';
-	font-size:28px;
-	padding-left:40px;
-	margin-top:12px;
+	padding-left:20px;
 }
 
 .person2{
 	font-family:'FontAwesome';
-	margin-top:20px;
 	padding:20px;
 	float:left;
 	
@@ -25,9 +21,7 @@
 
 .person2-title{
 	font-family:'FontAwesome';
-	font-size:28px;
-	padding-left:40px;
-	margin-top:12px;
+	padding-left:20px;
 }
 
 .selectpicker{
@@ -42,8 +36,7 @@
 }
 
 .fa-user{
-	float:left;
-	font-size:36px;
+	font-size:20px;
 }
 
 .best_in_place_message{
@@ -161,4 +154,53 @@
 
 	@keyframes yellow-fade{
 	    5%{ background-color:#ff8; }
+}
+
+@media screen and (max-width: 600px) {
+  .hide-for-mobile {
+	display: none;
+    visibility: hidden;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .resize-for-mobile {
+	width:50%;
+	height:50%;
+	padding-left:70px;
+  }
+}
+
+.choose-message{
+	font-size:20px;
+}
+
+.choose-message-2{
+	margin-top:10px;
+	font-size:13px;
+}
+
+.mobile-heading{
+	padding:20px;
+	color:white;
+	font-size:18px;
+}
+
+.mobile-paragraph{
+	padding:20px;
+	font-size:18px;
+}
+
+@media screen and (min-width: 601px) {
+  .hide-for-desktop {
+	display: none;
+    visibility: hidden;
+  }
+}
+
+.background-front{
+	background-image: url(meeting.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
 }

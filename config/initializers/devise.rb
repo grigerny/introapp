@@ -254,4 +254,5 @@ Devise.setup do |config|
   require 'omniauth-google-oauth2'
   config.omniauth :google_oauth2, "330061137178-jgtk67gg7dn65rb1kiee2nuu05pr4jqn.apps.googleusercontent.com", "hmtnR5jPR_wvpm326AExdoKM", {} unless Rails.env.production?
   config.omniauth :google_oauth2, "330061137178-855r9skonsi66bi6kb9ocmgcncicnre3.apps.googleusercontent.com", "YEJkMzP5bhdAap4UuDGYSiGG", {} if Rails.env.production? 
+  config.omniauth :linkedin, '77q7801owsfngg', 'rzM4qKNt8xidYCUy'
 end

@@ -56,3 +56,4 @@ gem "omniauth-google-oauth2"
 gem 'omnicontacts', github: 'Diego81/omnicontacts'
 gem 'omniauth-linkedin-oauth2'
 gem 'libv8', '~> 3.16.14.7'
+gem 'rails4-autocomplete'

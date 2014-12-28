@@ -9,6 +9,8 @@
 </div>
 
 <div class="hide-for-mobile">
+
+<% if current_user.contacts.count < 1 %>
 <br>
 <%= link_to '/contacts/gmail' do %>
 <center>
@@ -17,7 +19,14 @@
 </center>
 <% end %>
 <center>
-	
+<% else %>
+<br>
+<center>
+<%= image_tag('google_contacts.png') %><br>
+<%= "Google Contacts Imported" %>
+</center>
+<% end %>
+
 </div>
 
 <div class="row-fluid">
@@ -42,14 +51,14 @@
 			 
 			<div class="person1-title"><i class="fa fa-user"> Person 1</i></div><br>
 			<div class="person1">
-			<%= f.text_field :person1_name, :class=> "input_field", :placeholder => "Name:" %>
-			  <% if @contact_emails.blank? %>
-			<%= f.text_field :person1_email, :class=> "input_field", :placeholder => "Email:" %>
-			<% else %>
-			<%= f.text_field :person1_email, :class=> "input_field", :placeholder => "Search Google Contacts..." %>
-			<% end %>
+
+			  <%= f.autocomplete_field :contact_name, autocomplete_contact_name_intros_path, :placeholder => "Name:" %> 
+			  <%= f.autocomplete_field :contact_email, autocomplete_contact_email_intros_path, :placeholder => "Email:" %> 
+
 			</div>
+
 		</div>
+
 
 
 
@@ -57,16 +66,13 @@
 
 				<div class="person2-title"><i class="fa fa-user"> Person 2</i></div><br>
 				<div class="person2">
-				<%= f.text_field :person2_name, :class=> "input_field", :placeholder => "Name:"  %><br>
-				  <% if @contact_emails.blank? %>
-				<%= f.text_field :person2_email, :class=> "input_field", :placeholder => "Email:"  %>
-				<% else %>
-				<%= f.text_field :person2_email, :class=> "input_field", :placeholder => "Search Google Contacts..." %>
-				<% end %>
+				<%= f.autocomplete_field :contact_name, autocomplete_contact_name_intros_path, :placeholder => "Name:" %> 
+			  <%= f.autocomplete_field :contact_email, autocomplete_contact_email_intros_path, :placeholder => "Email:" %> 
 				</div>
 			</div>	
 			
 </div>
+
 			
 <div class="row-fluid">	
 	

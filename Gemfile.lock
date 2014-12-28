@@ -75,7 +75,7 @@ GEM
     less-rails (2.5.0)
       actionpack (>= 3.1)
       less (~> 2.5.0)
-    libv8 (3.16.14.3)
+    libv8 (3.16.14.7)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -188,6 +188,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
+  libv8 (~> 3.16.14.7)
   omniauth-google-oauth2
   omniauth-linkedin-oauth2
   omnicontacts!

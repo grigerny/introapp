@@ -12,7 +12,7 @@
 <br>
 <%= link_to '/contacts/gmail' do %>
 <center>
-<%= image_tag('google_contacts.png')%><br>
+<%= image_tag('google_contacts.png') %><br>
 <%= "Import Google Contacts" %>
 </center>
 <% end %>
@@ -81,7 +81,7 @@
 	<div class="row-fluid">
 	<center>
 	<div class="choose-message-2">
-	You can edit this
+	You can edit this on the next page
 	</div>
 	</center>
 	</div>
@@ -102,12 +102,6 @@
 <% end %>
 </div>
 
-<script>
-jQuery(document).ready(function() {
-    jQuery('.gmaillink').trigger('click');
-});
-jQuery(document).on("page:load ready", loaded);
-</script>
 
 
 <% if @contact_emails.blank? == false %>

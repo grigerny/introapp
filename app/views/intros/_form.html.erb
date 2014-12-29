@@ -52,8 +52,9 @@
 			<div class="person1-title"><i class="fa fa-user"> Person 1</i></div><br>
 			<div class="person1">
 
-			  <%= f.autocomplete_field :contact_name, autocomplete_contact_name_intros_path, :placeholder => "Name:" %> 
-			  <%= f.autocomplete_field :contact_email, autocomplete_contact_email_intros_path, :placeholder => "Email:" %> 
+			  <%= f.autocomplete_field :person1_name, autocomplete_contact_name_intros_path, :placeholder => "Name:", :class => 'input_field' %> 
+
+			  <%= f.autocomplete_field :person1_email, autocomplete_contact_email_intros_path, :placeholder => "Email:", :class => 'input_field', :id_element => "#contact_email#person1_email" %> 
 
 			</div>
 
@@ -61,13 +62,12 @@
 
 
 
-
 			<div class="span3 offset2">	
 
 				<div class="person2-title"><i class="fa fa-user"> Person 2</i></div><br>
 				<div class="person2">
-				<%= f.autocomplete_field :contact_name, autocomplete_contact_name_intros_path, :placeholder => "Name:" %> 
-			  <%= f.autocomplete_field :contact_email, autocomplete_contact_email_intros_path, :placeholder => "Email:" %> 
+				<%= f.autocomplete_field :person2_name, autocomplete_contact_name_intros_path, :placeholder => "Name:", :class => 'input_field', :id_element => "#contact_name#person2_name"  %> 
+			  	<%= f.autocomplete_field :person2_email, autocomplete_contact_email_intros_path, :placeholder => "Email:", :class => 'input_field', :id_element => "#contact_email#person2_email"  %> 
 				</div>
 			</div>	
 			

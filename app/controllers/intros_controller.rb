@@ -36,8 +36,10 @@ class IntrosController < ApplicationController
   # POST /intros
   # POST /intros.json
   def create
+    load_contacts
     @intro = Intro.new(intro_params)
     @intro.user = current_user
+
 
     respond_to do |format|
       if @intro.save

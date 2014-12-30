@@ -48,6 +48,7 @@
    height:100px;
    border: none !important;
    outline:0px !important;
+   margin-bottom: 20px;
 }
 
 .update-button{
@@ -89,7 +90,7 @@
 
 .top-bar{
 	background-color:#404040;
-	height:60px;
+	height:30px;
 }
 .to-email{
 	margin-top:20px;
@@ -109,10 +110,9 @@
 }
 
 .fa-paper-plane-o{
-	margin-right:40px;
-	padding:10px;
+	margin-right:10px;
 	float:right;
-	font-size:36px;
+	font-size:20px;
 }
 
 .fa-paper-plane-o:hover{
@@ -121,8 +121,8 @@
 
 .fa-arrow-left{
 	margin-right:40px;
-	padding:10px;
-	font-size:36px;
+	font-size:20px;
+	padding:5px;
 }
 
 .sign-up{

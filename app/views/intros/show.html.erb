@@ -29,7 +29,9 @@ Hi <%= @intro.person1_name.titleize %> and <%= @intro.person2_name.titleize %>,
 <br>
 
 <div class="best-in-place-wrapper">	
-<%= best_in_place @intro, :email_subject, :type => :textarea, :display_with => :simple_format, :html_attrs => { :class => 'best_in_place_message' } %>If either of you need any additional info, please don’t hesitate to reach out.
+<%= best_in_place @intro, :email_subject, :type => :textarea, :display_with => :simple_format, :html_attrs => { :class => 'best_in_place_message' } %>
+
+If either of you need any additional info, please don’t hesitate to reach out.
 </div>
 
 <script>
@@ -41,6 +43,12 @@ $('.best_in_place').bind('ajax:success', function(){ this.innerHTML = this.inner
 </div>
 <hr>
 
-<%= link_to :controller => "intros", :action => "send_email", :id => @intro.id do %>
-<i class="fa fa-paper-plane-o"> Send</i>
-<% end %>
+<div class="row-fluid">
+	<div class="span12">
+		<div class="bottom-bar">
+		<%= link_to :controller => "intros", :action => "send_email", :id => @intro.id do %>
+		<i class="fa fa-paper-plane-o"> Send</i>
+		<% end %>
+		</div>
+	</div>
+</div>

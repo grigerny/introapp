@@ -1,11 +1,22 @@
 Introapp::Application.routes.draw do
+  resources :contacts
+
   match "/contacts/:importer/callback/" => "intros#new", :via => [:get]
   match "/users/auth/linkedin/callback/" => "intros#new", :via => [:get]
   
   devise_for :users, :controllers => { registrations: 'registrations', :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :intros
+  
+  resources :intros do
+  get :autocomplete_contact_name, :on => :collection
+  get :autocomplete_contact_email, :on => :collection
+end
+
+  
   get :send_email, to: 'intros#send_email', as: :send_email
   resources :after_signup
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

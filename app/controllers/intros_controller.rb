@@ -1,6 +1,10 @@
 class IntrosController < ApplicationController
+  autocomplete :contact, :name, :display_value => :autocomplete_upcase
+  autocomplete :contact, :email
+
   before_action :set_intro, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, :except => [:index]
+  
   
   
   # GET /intros
@@ -20,6 +24,8 @@ class IntrosController < ApplicationController
   def new
     load_contacts
     @intro = Intro.new
+    @users = User.all
+    @contacts = Contact.all
   end
 
   # GET /intros/1/edit
@@ -30,8 +36,10 @@ class IntrosController < ApplicationController
   # POST /intros
   # POST /intros.json
   def create
+    load_contacts
     @intro = Intro.new(intro_params)
     @intro.user = current_user
+
 
     respond_to do |format|
       if @intro.save
@@ -88,12 +96,18 @@ class IntrosController < ApplicationController
     end
     
     def load_contacts
-      @contact_emails = []
       unless request.env['omnicontacts.contacts'].blank?
-        contacts = request.env['omnicontacts.contacts']
-        contacts.each{ |con| @contact_emails << con[:email] }
-        @contact_emails
+        @contacts = request.env['omnicontacts.contacts']
+        @user = request.env['omnicontacts.user']
+        @contacts.each do |contact|
+       
+        c = current_user.contacts.new
+        c.name = "#{contact[:name]}"
+        c.email = "#{contact[:email]}"
+        c.save
+
       end
     end
+  end
 
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+
+<%= form_for [@mycontact, Referral.new], :remote => true do |f| %>
+   <p>
+     <%= f.label :name, "#{@mycontact.name} introduced you to:" %>
+     <%= f.text_field :name, :placeholder => "Add a new referral" %>
+   </p>
+   <p><%= f.submit "Add Referral" %></p> 
+ <% end %>
+
+<h3>All Referrals</h3>
+
+<div id="referrals">	
+<%= render @mycontact.referrals %>  
+</div>
+
+
+<%= link_to 'Back', mycontacts_path %>

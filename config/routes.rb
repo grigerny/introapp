@@ -1,4 +1,9 @@
 Introapp::Application.routes.draw do
+  resources :mycontacts do 
+    resources :referrals
+     get :save_referral
+  end
+
   resources :contacts
 
   match "/contacts/:importer/callback/" => "intros#new", :via => [:get]

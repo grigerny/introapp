@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<%= best_in_place @mycontact, :name, :type => :input %> [Referral source:  <%= @mycontact.referredby_name || @mycontact.location %>]
+
 
 <%= form_for [@mycontact, Referral.new], :remote => true do |f| %>
    <p>
-     <%= f.label :name, "#{@mycontact.name} introduced you to:" %>
-     <%= f.text_field :name, :placeholder => "Add a new referral" %>
+     <%= f.label :name, "New Referral From #{@mycontact.name}:" %>
+     <%= f.text_field :name, :placeholder => "Referral Name" %>
    </p>
-   <p><%= f.submit "Add Referral" %></p> 
+   <p><%= f.submit "Add and Save Referral" %></p> 
  <% end %>
 
-<h3>All Referrals</h3>
+<h3><%= "#{@mycontact.name}'s" %> Referrals:</h3>
 
 <div id="referrals">	
 <%= render @mycontact.referrals %>  

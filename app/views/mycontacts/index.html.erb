@@ -6,6 +6,7 @@
       <th>NAME</th>
       <th>REFERRALS</th>
       <th>ADDED</th>
+	  <th>REFERRAL SOURCE</th>
     </tr>
   </thead>
 
@@ -18,6 +19,12 @@
 		<td><%= link_to mycontact.name, mycontact %></td>
 		<td><%= mycontact.referrals.count %></td>
 		<td><%= mycontact.created_at.strftime("%-m/%d/%Y")%></td>
+		<td><% if mycontact.referredby_name.blank? %> 
+			<%= mycontact.location %>
+			<% else %> 
+			<%= mycontact.referredby_name %>
+			<% end %>
+			</td>
         <td><%= link_to 'Edit', edit_mycontact_path(mycontact) %></td>
         <td><%= link_to 'Delete', mycontact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

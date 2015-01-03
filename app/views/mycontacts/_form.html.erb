@@ -11,10 +11,19 @@
     </div>
   <% end %>
 
-	<%= f.label 'Contact Name' %>
+	<div>
+	<%= f.label "Person's Name" %>
 	<%= f.text_field :name %>
+	</div>
+	
+	<div>
+	<%= f.label "Referral Source:" %>
+	<%= f.text_field :location %>
+	</div>
+	
+	
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save New Contact' %>
   </div>
 <% end %>

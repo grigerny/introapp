@@ -66,6 +66,7 @@ class MycontactsController < ApplicationController
      r = Referral.find(params[:format])
      n = Mycontact.new
      n.name = r.name
+     n.referredby_name = @mycontact.name
      n.save
      redirect_to mycontacts_url
 end

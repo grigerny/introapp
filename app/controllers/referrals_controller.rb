@@ -30,9 +30,13 @@ class ReferralsController < ApplicationController
   def create
     @mycontact = Mycontact.find(params[:mycontact_id])
     @referral = @mycontact.referrals.create!(params[:referral])
+    n = Mycontact.new
+    n.name = @referral.name
+    n.referredby_name = @mycontact.name
+    n.save
     
     respond_to do |format|
-          format.html { redirect_to @mycontact }
+          format.html { redirect_to mycontacts_url }
           format.js
     end
   end
@@ -42,7 +46,7 @@ class ReferralsController < ApplicationController
   def update
     respond_to do |format|
       if @referral.update(referral_params)
-        format.html { redirect_to @mycontacts, notice: 'Referral was successfully updated.' }
+        format.html { redirect_to mycontacts_url, notice: 'Referral was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -54,14 +58,14 @@ class ReferralsController < ApplicationController
   # DELETE /referrals/1
   # DELETE /referrals/1.json
   def destroy
-    @referral.destroy
+    @mycontact = Mycontact.find(params[:mycontact_id])
+    @referral = @mycontact.referrals.find(params[:id]).destroy
     respond_to do |format|
-      format.js { render :layout=> false }
+      format.js 
     end
   end
 
-       
-
+      
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_referral

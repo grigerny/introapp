@@ -9,6 +9,10 @@ class IntrosController < ApplicationController
   
   # GET /intros
   # GET /intros.json
+  
+  def main
+  end 
+  
   def index
     @intros = Intro.all
   end

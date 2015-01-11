@@ -1,10 +1,13 @@
 class MycontactsController < ApplicationController
+  include SmartListing::Helper::ControllerExtensions
+  helper  SmartListing::Helper
   before_action :set_mycontact, only: [:show, :edit, :update, :destroy]
+
 
   # GET /mycontacts
   # GET /mycontacts.json
   def index
-    @mycontacts = Mycontact.all
+     @mycontacts  = smart_listing_create :mycontacts, Mycontact.all, partial: "mycontacts/list"
   end
 
   # GET /mycontacts/1

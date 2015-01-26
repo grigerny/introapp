@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102140331) do
+ActiveRecord::Schema.define(version: 20150120020345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150102140331) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "referredby_name"
-    t.integer  "referredby_id"
+    t.integer  "referral_id"
     t.string   "location"
   end
 

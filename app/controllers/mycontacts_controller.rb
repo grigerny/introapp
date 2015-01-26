@@ -7,7 +7,7 @@ class MycontactsController < ApplicationController
   # GET /mycontacts
   # GET /mycontacts.json
   def index
-     @mycontacts  = smart_listing_create :mycontacts, Mycontact.all, partial: "mycontacts/list"
+    @mycontacts = smart_listing_create :mycontacts, Mycontact.all, partial: "mycontacts/list"
   end
 
   # GET /mycontacts/1
@@ -31,8 +31,8 @@ class MycontactsController < ApplicationController
 
     respond_to do |format|
       if @mycontact.save
-        format.html { redirect_to @mycontact, notice: 'Mycontact was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @mycontact }
+        format.html { redirect_to mycontacts_url, notice: 'Mycontact was successfully created.' }
+        format.json { render action: 'new', status: :created, location: @mycontact}
       else
         format.html { render action: 'new' }
         format.json { render json: @mycontact.errors, status: :unprocessable_entity }

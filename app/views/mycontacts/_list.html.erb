@@ -11,6 +11,7 @@
 </table%>
 
 
+
 <%= link_to 'New Contact', new_mycontact_path %><br><br>
 
 
@@ -18,7 +19,7 @@
     <% smart_listing.collection.each do |mycontact| %>
       <tr>
 		<td><%= link_to mycontact.name, mycontact %></td>
-		<td><%= mycontact.referrals.count.to_i %></td>
+		<td><%= mycontact.referrals.count %></td>
 		<td><%= mycontact.created_at.strftime("%-m/%d/%Y")%></td>
 		<td><% if mycontact.referredby_name.blank? %> 
 			<%= mycontact.location %>

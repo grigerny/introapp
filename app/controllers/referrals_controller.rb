@@ -28,11 +28,15 @@ class ReferralsController < ApplicationController
   # POST /referrals
   # POST /referrals.json
   def create
+    @user = current_user
     @mycontact = Mycontact.find(params[:mycontact_id])
     @referral = @mycontact.referrals.create!(params[:referral])
+
     n = Mycontact.new
+    @referral.user_id = current_user
     n.name = @referral.name
     n.referredby_name = @mycontact.name
+    n.user_id = @user.id
     n.save
     
     respond_to do |format|

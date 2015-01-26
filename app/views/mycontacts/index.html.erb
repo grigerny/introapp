@@ -1,2 +1,40 @@
-<%= smart_listing_render(:mycontacts) %>
+<%= link_to "New Contact",new_mycontact_path %>
 
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name_cont, "Search" %>
+  <%= f.search_field :name_cont %>
+
+
+<table class="table table-hover">
+     <th><%= sort_link(@q, :name) %></th>
+     <th><%= sort_link(@q, :mycontact_referral_path, "Contact") %></th>
+     <th><%= sort_link(@q, :created_at) %></th>
+	 <th><%= sort_link(@q, :referredby_name) %></th>
+	 <th>EDIT</th>
+	 <th>DELETE</th>
+</table%>
+
+
+
+
+ <tbody>
+<% @mycontacts.each do |mycontact| %>
+<tr>
+<td><%= link_to mycontact.name, mycontact %></td>
+		<td><%= mycontact.referrals.count %></td>
+		<td><%= mycontact.created_at.strftime("%-m/%d/%Y")%></td>
+		<td><% if mycontact.referredby_name.blank? %> 
+			<%= mycontact.location %>
+			<% else %> 
+			<%= mycontact.referredby_name %>
+			<% end %>
+			</td>
+        <td><%= link_to 'Edit', edit_mycontact_path(mycontact) %></td>
+        <td><%= link_to 'Delete', mycontact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>     
+    <% end %>
+      </tbody>
+</table> 
+
+  <% end %>

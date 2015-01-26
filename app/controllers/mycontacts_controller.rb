@@ -1,13 +1,12 @@
 class MycontactsController < ApplicationController
-  include SmartListing::Helper::ControllerExtensions
-  helper  SmartListing::Helper
   before_action :set_mycontact, only: [:show, :edit, :update, :destroy]
 
 
   # GET /mycontacts
   # GET /mycontacts.json
   def index
-    @mycontacts = smart_listing_create :mycontacts, Mycontact.all, partial: "mycontacts/list"
+    @q = Mycontact.where(:user_id => current_user).ransack(params[:q])
+    @mycontacts = @q.result.includes(:referrals).page(params[:page])
   end
 
   # GET /mycontacts/1
@@ -28,6 +27,7 @@ class MycontactsController < ApplicationController
   # POST /mycontacts.json
   def create
     @mycontact = Mycontact.new(mycontact_params)
+    @mycontact.user_id = current_user.id
 
     respond_to do |format|
       if @mycontact.save

@@ -1,5 +1,6 @@
 class Referral < ActiveRecord::Base
   belongs_to :mycontact
   
-  attr_accessible :name, :mycontact_id
+  attr_accessible :name, :mycontact_id, :user_id
+
 end

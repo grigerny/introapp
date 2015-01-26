@@ -22,7 +22,7 @@
 <% @mycontacts.each do |mycontact| %>
 <tr>
 <td><%= link_to mycontact.name, mycontact %></td>
-		<td><%= mycontact.referrals.count %></td>
+		<td><%= mycontact.referrals_count %></td>
 		<td><%= mycontact.created_at.strftime("%-m/%d/%Y")%></td>
 		<td><% if mycontact.referredby_name.blank? %> 
 			<%= mycontact.location %>

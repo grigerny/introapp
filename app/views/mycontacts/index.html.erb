@@ -7,10 +7,10 @@
 
 
 <table class="table table-hover">
-     <th><%= sort_link(@q, :name) %></th>
-     <th><%= sort_link(@q, :mycontact_referral_path, "Contact") %></th>
-     <th><%= sort_link(@q, :created_at) %></th>
-	 <th><%= sort_link(@q, :referredby_name) %></th>
+     <th><%= sort_link(@q, :name, "NAME") %></th>
+     <th><%= sort_link(@q, :referrals_count, "REFERRALS") %></th>
+     <th><%= sort_link(@q, :created_at, "DATE ADDED") %></th>
+	 <th><%= sort_link(@q, :referredby_name, "REFERRED BY") %></th>
 	 <th>EDIT</th>
 	 <th>DELETE</th>
 </table%>

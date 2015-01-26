@@ -6,7 +6,7 @@ class MycontactsController < ApplicationController
   # GET /mycontacts.json
   def index
     @q = Mycontact.where(:user_id => current_user).ransack(params[:q])
-    @mycontacts = @q.result.includes(:referrals).page(params[:page])
+    @mycontacts = @q.result(distinct: true)
   end
 
   # GET /mycontacts/1

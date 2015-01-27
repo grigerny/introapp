@@ -27,6 +27,7 @@
 </center>
 <% end %>
 
+<%= Contact.count %>
 </div>
 
 <div class="row-fluid">
@@ -52,8 +53,8 @@
 			<div class="person1-title"><i class="fa fa-user"> Person 1</i></div><br>
 			<div class="person1">
 
-			  <%= f.autocomplete_field :person1_name, autocomplete_contact_name_intros_path, :placeholder => "Name:", 'data-auto-focus' => true, :class => 'input_field' %> 
-			  <%= f.autocomplete_field :person1_email, autocomplete_contact_email_intros_path, :placeholder => "Email:", 'data-auto-focus' => true, :class => 'input_field' %> 
+			  <%= f.autocomplete_field :person1_name, autocomplete_contact_name_intros_path, :placeholder => "Name", 'data-auto-focus' => true, :class => 'input_field' %> 
+			  <%= f.autocomplete_field :person1_email, autocomplete_contact_email_intros_path, :placeholder => "Email", 'data-auto-focus' => true, :class => 'input_field' %> 
 
 			</div>
 
@@ -65,8 +66,8 @@
 
 				<div class="person2-title"><i class="fa fa-user"> Person 2</i></div><br>
 				<div class="person2">
-				<%= f.autocomplete_field :person2_name, autocomplete_contact_name_intros_path, :placeholder => "Name:", 'data-auto-focus' => true, :class => 'input_field' %> 
-			  	<%= f.autocomplete_field :person2_email, autocomplete_contact_email_intros_path, :placeholder => "Email:", 'data-auto-focus' => true, :class => 'input_field' %> 
+				<%= f.autocomplete_field :person2_name, autocomplete_contact_name_intros_path, :placeholder => "Name", 'data-auto-focus' => true, :class => 'input_field' %> 
+			  	<%= f.autocomplete_field :person2_email, autocomplete_contact_email_intros_path, :placeholder => "Email", 'data-auto-focus' => true, :class => 'input_field' %> 
 				</div>
 			</div>	
 			
@@ -86,7 +87,7 @@
 	<div class="row-fluid">
 	<center>
 	<div class="choose-message-2">
-	You can edit this on the next page
+	You can edit it on the next page
 	</div>
 	</center>
 	</div>
@@ -109,19 +110,4 @@
 
 
 
-<% if @contact_emails.blank? == false %>
 
-<script>
-  $(function() {
-    var availableTags = <%= raw @contact_emails.reject(&:blank?).to_json %>  
-    $( "#intro_person2_email" ).autocomplete({
-    source: availableTags
-    });
-
-    $( "#intro_person1_email" ).autocomplete({
-    source: availableTags
-    });
-});
-</script>
-
-<% end %>

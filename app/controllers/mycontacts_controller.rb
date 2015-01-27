@@ -5,10 +5,8 @@ class MycontactsController < ApplicationController
   # GET /mycontacts
   # GET /mycontacts.json
   def index
-    @q = Mycontact.where(:user_id => current_user).ransack(params[:q])
-    @mycontacts = @q.result.except(:order).order("#{@q.sorts.first.attr_name} #{@q.sorts.first.dir} NULLS LAST")
-
-   
+    @q = Mycontact.where(:user_id => current_user.id).ransack(params[:q])
+    @mycontacts = @q.result(distinct: true)
   end
 
   # GET /mycontacts/1

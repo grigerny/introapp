@@ -1,17 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<%= best_in_place @mycontact, :name, :type => :input %> [Referral source:  <%= @mycontact.referredby_name || @mycontact.location %>]
+<div class="row-fluid">
+	<div class="span12">
+		<div class="add-contact">
+			<div class="span4 offset2">
+			<i class="fa fa-user"></i> <%= best_in_place @mycontact, :name, :type => :input %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-fluid">
+	<div class="span12">
+		<div class="span8 offset2">
+You met <%= best_in_place @mycontact, :name, :type => :input %> at <%= best_in_place @mycontact, :location, :type => :input %>. <%= best_in_place @mycontact, :name, :type => :input %> was referred to you by <%= best_in_place @mycontact, :referredby_name, :type => :input %>.
+		</div>
+	</div>
+</div>
 
 
 <%= form_for [@mycontact, Referral.new], :remote => true do |f| %>
    <p>
-     <%= f.label :name, "New Referral From #{@mycontact.name}:" %>
-     <%= f.text_field :name, :placeholder => "Referral Name" %>
+     <%= f.label :name, "Add a referral from #{@mycontact.name}:" %>
+     <%= f.text_field :name, :placeholder => "Full Name" %>
    </p>
-   <p><%= f.submit "Add and Save Referral" %></p> 
+   <p><%= f.submit "Add Referral" %></p> 
  <% end %>
 
-<h3><%= "#{@mycontact.name}'s" %> Referrals:</h3>
+<h3>Recent Referrals</h3>
 
 <div id="referrals">	
 <%= render @mycontact.referrals %>  

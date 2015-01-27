@@ -13,15 +13,8 @@
 
 
   <div class="mycontact-text-field-wrapper">	
-	Name: <%= f.text_field :name, :class => "mycontact-text-field" %> 
-  </div>
-	
-  <div class="mycontact-text-field-wrapper">  
-	Referral Source: <%= f.text_field :referredby_name, :class => "mycontact-text-field"  %>
-  </div>
-
-  <div class="mycontact-text-field-wrapper">  
-  Referred By (ID): <%= f.text_field :referral_id, :class => "mycontact-text-field"  %>
+	I met <%= f.text_field :name, :class => "mycontact-text-field", :placeholder => "Full Name" %> 
+	at/in: <%= f.text_field :location, :class => "mycontact-text-field", :placeholder => "location"  %>.<br>He was referred to me by <%= f.text_field :referredby_name, :class => "mycontact-text-field", :placeholder => "Referrer's Full Name"  %>.
   </div>
 	
 	

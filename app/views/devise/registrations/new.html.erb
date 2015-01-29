@@ -24,17 +24,6 @@ We will soon have a complete FAQ section, but until then please email us at <%= 
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div>
-  <%= f.email_field :email, :class=> "input_field", :autofocus => true, :placeholder => "Email" %></div>
-<br>
-  <div>
-  <%= f.password_field :password, :class=> "input_field", :placeholder => "Password" %></div>
-<br>
-  <div>
-  <%= f.password_field :password_confirmation, :class=> "input_field", :placeholder => "Confirm Password" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
 <%= render "devise/shared/links" %>
 <% end %>
 

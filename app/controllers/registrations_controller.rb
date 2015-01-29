@@ -11,6 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
        flash[:notice]  = 'Profile was updated.' 
      end
    end
+
    
   protected
   

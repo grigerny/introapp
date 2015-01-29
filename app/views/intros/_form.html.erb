@@ -27,7 +27,6 @@
 </center>
 <% end %>
 
-<%= Contact.count %>
 </div>
 
 <div class="row-fluid">
@@ -53,6 +52,7 @@
 			<div class="person1-title"><i class="fa fa-user"> Person 1</i></div><br>
 			<div class="person1">
 
+			 
 			  <%= f.autocomplete_field :person1_name, autocomplete_contact_name_intros_path, :placeholder => "Name", 'data-auto-focus' => true, :class => 'input_field' %> 
 			  <%= f.autocomplete_field :person1_email, autocomplete_contact_email_intros_path, :placeholder => "Email", 'data-auto-focus' => true, :class => 'input_field' %> 
 

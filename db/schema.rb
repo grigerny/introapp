@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150126130725) do
     t.integer  "referral_id"
     t.string   "location"
     t.integer  "user_id"
-    t.integer  "referrals_count", default: 0, null: false
+    t.integer  "referrals_count"
   end
 
   create_table "referrals", force: true do |t|

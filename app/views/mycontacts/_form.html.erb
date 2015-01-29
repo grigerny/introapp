@@ -1,0 +1,25 @@
+<%= form_for(@mycontact) do |f| %>
+  <% if @mycontact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mycontact.errors.count, "error") %> prohibited this mycontact from being saved:</h2>
+
+      <ul>
+      <% @mycontact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="mycontact-text-field-wrapper">	
+	I met <%= f.text_field :name, :class => "mycontact-text-field", :placeholder => "Full Name" %> 
+	at/in: <%= f.text_field :location, :class => "mycontact-text-field", :placeholder => "location"  %>.<br>He was referred to me by <%= f.text_field :referredby_name, :class => "mycontact-text-field", :placeholder => "Referrer's Full Name"  %>.
+  </div>
+	
+	
+
+  <div class="actions">
+    <%= f.submit 'Add Contact', :class => "mycontact-new-button" %>
+  </div>
+<% end %>

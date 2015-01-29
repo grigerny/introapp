@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :intros
   has_many :contacts
+  has_many :mycontacts
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -24,7 +25,7 @@ class User < ActiveRecord::Base
   
   def update_with_password(params={})
           current_password = params.delete(:current_password)
-
+          
           if params[:password].blank?
             params.delete(:password)
             params.delete(:password_confirmation) if params[:password_confirmation].blank?
@@ -39,9 +40,11 @@ class User < ActiveRecord::Base
             false
           end 
         end
-
-          clean_up_passwords
           result
+        end
+        
+        def has_no_password?
+          self.encrypted_password.blank?
         end
          
 end

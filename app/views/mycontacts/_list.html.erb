@@ -1,0 +1,40 @@
+<center><h1>My Contacts</h1></center>
+
+<%= current_user.id %>
+<table class="table table-hover">
+
+     <th><%= smart_listing.sortable "NAME", :name %></th>
+      <th>REFERRALS</th>
+      <th><%= smart_listing.sortable "ADDED", :created_at %></th>
+	  <th><%= smart_listing.sortable "REFFERED BY", :referredby_name %></th>
+	<th>EDIT</th>
+	<th>DELETE</th>
+</table%>
+
+
+
+<%= link_to 'New Contact', new_mycontact_path %><br><br>
+
+
+  <tbody>
+    <% smart_listing.collection.each do |mycontact| %>
+      <tr>
+		<td><%= link_to mycontact.name, mycontact %></td>
+		<td><%= mycontact.referrals.count %></td>
+		<td><%= mycontact.created_at.strftime("%-m/%d/%Y")%></td>
+		<td><% if mycontact.referredby_name.blank? %> 
+			<%= mycontact.location %>
+			<% else %> 
+			<%= mycontact.referredby_name %>
+			<% end %>
+			</td>
+        <td><%= link_to 'Edit', edit_mycontact_path(mycontact) %></td>
+        <td><%= link_to 'Delete', mycontact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= smart_listing.paginate %>
+<%= smart_listing.pagination_per_page_links %>

@@ -4,13 +4,14 @@ class RegistrationsController < Devise::RegistrationsController
      if resource.update_with_password(params[resource_name])
        set_flash_message :notice, :updated
        sign_in resource_name, resource, :bypass => true
-       redirect_to after_update_path_for(resource)
+       redirect_to new_intro_path
      else
        clean_up_passwords(resource)
-       redirect_to after_update_path_for(resource)
+       redirect_to new_intro_path
        flash[:notice]  = 'Profile was updated.' 
      end
    end
+
    
   protected
   
@@ -19,7 +20,6 @@ class RegistrationsController < Devise::RegistrationsController
     after_signup_path(:confirm_profile)
   end
   
-    
   private
 
    def sign_up_params

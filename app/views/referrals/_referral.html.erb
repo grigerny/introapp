@@ -1,0 +1,4 @@
+<p>
+<%= referral.name %>
+<%= link_to 'Edit', edit_mycontact_referral_path(@mycontact,referral) %> | <%= link_to 'Delete', mycontact_referral_path(@mycontact,referral), :remote => true, method: :delete, data: { confirm: 'Are you sure?' }  %> 
+</p>

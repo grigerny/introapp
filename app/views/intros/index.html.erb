@@ -1,13 +1,12 @@
 <center><%= image_tag "yointro-logo.png" %></center><br><br>
 
 <% if user_signed_in? %>
-<center><h2>Intro History<h3></center><br><br>
 
 <div class="row-fluid">
 	<div class="span4 offset4">
     <% current_user.intros.order("created_at desc").each do |intro| %>
 <div class="intro-history">
-<b><%= intro.created_at.strftime("%m/%d/%Y")%></b> <%= intro.person1_name %> to <%= intro.person2_name %>
+<b><%= intro.created_at.strftime("%m/%d/%Y")%></b> <%= intro.person1_name.titleize %> to <%= intro.person2_name.titleize %>
 </div><br>
 
     <% end %>
